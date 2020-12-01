@@ -145,106 +145,106 @@ main {
   line-height: 1.6rem;
   color: #757575;
 }
-.main-table-container {
-  display: grid;
-  grid-template: 35px 159px 31px/197px 38px;
-  grid-template-areas:
-    "titulo titulo"
-    "contenido boton"
-    "fecha fecha";
-  margin-left: calc(50% - 99px);
-  grid: center;
+.scrollx {
+  display: flex;
+  width: 100%;
+  min-width: 250px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  margin-bottom: 60px;
 }
-.item.title {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 90rem;
-  min-width: 25.5rem;
-  text-align: center;
-  margin-bottom: 4rem;
+.table-benefits {
+  width: 70%;
+  max-width: 900px;
+  min-width: 320px;
+  margin: 0 5px 0 0;
+  height: auto;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   background: #282623;
-  font-size: 1.8rem;
-  font-weight: bold;
-  line-height: 2.3rem;
-  color: #ff9536;
-  padding-bottom: 10px;
-}
-.item.content {
-  grid-area: contenido;
-  display: grid;
-  grid-template: repeat(4, 1fr) / 101px 95px;
-  border-radius: 10px;
-  overflow: hidden;
-  gap: 17px;
-  margin-left: 35px;
-  margin-top: 20px;
-  padding-bottom: 10px;
-}
-.item.content .subitem {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  padding-left: 12px;
-  background-color: var(--white-color);
-  text-align: center;
-}
-.item.content .text {
-  font-family: "inter", sans-serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-  align-items: center;
-  line-height: 1.9rem;
-  color: #b5b0ac;
-  text-align: center;
-}
-.item.content .value {
-  font-family: "Inter", sans-serif;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 17px;
-  color: #757575;
-  background-image: url("../assets/icons/trending-down.svg");
-  background-repeat: no-repeat;
-  background-position: 80%;
-}
-.item.content .value:nth-of-type(4) {
-  background-image: url("../assets/icons/trending-up.svg");
 }
 
-.item.button a {
-  display: block;
-  width: 50%;
-  height: 80%;
+.table-benefits .table-benefits__h3--price {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--bitcoin-orange);
+  margin-left: calc(50% - 120px);
 }
-.item.date {
-  grid-area: fecha;
-  display: flex;
-  align-items: center;
+.table-benefits .table-benefits__h3--commissions {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary-blue);
+  margin-left: calc(50% - 150px);
+}
+.table-container {
+  margin-top: 20px;
+  width: 100%;
+  min-width: 250px;
+  display: grid;
+  grid-template-columns: 100px 100px;
+  grid-template-rows: 40px 40px 40px 40px;
+  grid-gap: 2px;
+  border-radius: 10px;
   justify-content: center;
-  background-color: var(--soft-orange);
-  color: var(--warm-black);
-  margin: 0 auto;
-  width: 90%;
-  height: auto;
-  border-radius: 4px;
+  background: #282623;
 }
-.item.title-two {
-  width: 90%;
-  margin: 0 auto;
-  max-width: 90rem;
-  min-width: 25.5rem;
-  text-align: center;
-  margin-bottom: 4rem;
+
+.tablet-container span {
+  position: relative;
+  background-image: url("../assets/icons/right-arrow.svg");
+  background-repeat: no-repeat;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.16);
   border-radius: 4px;
   background: #282623;
-  font-size: 1.8rem;
-  font-weight: bold;
-  line-height: 2.3rem;
-  color: #1a9af7;
-  padding-bottom: 20px;
+}
+
+.table-container .item {
+  padding: 10px;
+  font-size: 1.4rem;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+}
+.item.content {
+  font-weight: 500;
+  color: #bababa;
+}
+.item.price {
+  font-weight: 400;
+  padding-left: 20px;
+  color: #bababa;
+}
+.price .lower {
+  width: 15px;
+  height: 10px;
+  margin-left: 10px;
+  background-image: url("../assets/icons/trending-down.svg");
+  background-repeat: no-repeat;
+}
+.price .upper {
+  width: 15px;
+  height: 10px;
+  margin-left: 10px;
+  background-image: url("../assets/icons/trending-up.svg");
+  background-repeat: no-repeat;
+}
+
+.table-benefits__p {
+  width: 170px;
+  max-width: 250px;
+  padding: 5px;
+  margin-left: calc(50% - 82px);
+  margin-top: 15px;
+  text-align: center;
+}
+.table-benefits__p.price {
+  background: var(--soft-orange);
+  border-radius: 5px;
+}
+.table-benefits__p.commissions {
+  background: var(--soft-blue);
+  border-radius: 5px;
 }
 
 .main-product-detail {
@@ -379,7 +379,6 @@ main {
 
 .plans-container-sliders {
   display: flex;
-
   height: 316px;
   overflow-x: scroll;
   overscroll-behavior-x: contain;
@@ -401,7 +400,7 @@ main {
 }
 .plans-container-card .small--right--arrow {
   position: absolute;
-  right: -15px;
+  right: -10px;
   top: 50%;
   width: 24px;
   height: 24px;
@@ -411,7 +410,7 @@ main {
 
 .plans-container-card .small--left--arrow {
   position: absolute;
-  left: -15px;
+  left: -10px;
   top: 45%;
   width: 24px;
   height: 24px;
